@@ -1,0 +1,13 @@
+{
+	"servers": [
+		{
+			"addr": "127.0.0.1:44380",
+			"key-pairs": [
+				{
+					"cert": "./config/insecure-https.localhost.crt",
+					"key": "./config/insecure-https.localhost.key"
+				}
+			]
+		}
+	]
+}

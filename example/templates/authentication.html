@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Persona authentication</title>
+		<script src="https://login.persona.org/authentication_api.js"></script>
+		<script>
+			function userHasSession(email) {
+				var xhr = new XMLHttpRequest();
+				var url = {{ .URL }};
+
+				var postData = JSON.stringify({
+					'email': email
+				});
+
+				xhr.open('POST', url, false)
+				xhr.send(postData);
+				if (xhr.status != 200) {
+					return false;
+				}
+				return true;
+			}
+
+			navigator.id.beginAuthentication(function(email) {
+				if (!userHasSession(email)) {
+					displayLoginForm();
+					return;
+				}
+				navigator.id.completeAuthentication();
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

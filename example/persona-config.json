@@ -1,0 +1,26 @@
+{
+	"private-key": {
+		"type": "RSA",
+		"file": "./config/insecure-persona.key-rsa2048"
+	},
+	"authentication": {
+		"url": "/persona/authentication",
+		"template": "./templates/authentication.html",
+		"disabled": false
+	},
+	"provisioning": {
+		"url": "/persona/provisioning",
+		"template": "./templates/provisioning.html",
+		"disabled": false
+	},
+	"delegation": {
+		"delegate": false,
+		"host": "idp.example.com"
+	},
+	"session": {
+		"url": "/persona/session",
+		"store": "sqlite",
+		"backing": "./config/accounts.db"
+	},
+	"certificate-url": "/persona/certificate"
+}
